@@ -17,7 +17,7 @@ Au lancement du site [HISTO CH VOTATIONS](http://www.bofr.ch) le programme propo
 
 ![image_accueil](http://www.bofr.ch/modeemploi.jpg)
 
-Figure : le site avec ses principales caractéristiques
+Figure 1. Le site avec ses principales caractéristiques
 
 
 ## Références et sources d'inspiration
