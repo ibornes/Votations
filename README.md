@@ -2,15 +2,17 @@
 
 ## Historique (1894-2017) des résultats des votations fédérales suisses par canton
 
-**Adresse.** Le graphique animé de l'historique du résultat des votations fédérales se trouve à l'adresse suivante : [HISTO CH VOTATIONS](http://www.bofr.ch)
+**Adresse.** Le graphique animé de l'historique du résultat des votations fédérales réalisées entre 1894 et 2017 se trouve à l'adresse suivante : [HISTO CH VOTATIONS](http://www.bofr.ch)
 
-**Description.** L'animation proposée permet de visualiser à l'aide de bulles le résultat par canton de chacune des votations fédérales exécutée entre 1894 et 2017. Le graphique bulle proposé permet de représenter simultanément et dynamiquement cinq variables relatives au vote fédéral dans les cantons. Les cinq variables sont : le taux d'acceptation en pourcent (ordonnée), le taux de participation en pourcents (abscisse), le nombre de bulletins valables (rayon de la bulle), la région lingustique (couleur) et le libellé des votations (qui peut coulisser sous le graphique).
+**Description.** L'animation proposée permet de visualiser à l'aide de bulles le résultat par canton de chacune des votations fédérales exécutées entre 1894 et 2017. Le graphique à bulles proposé permet de représenter simultanément et dynamiquement cinq variables relatives au vote fédéral dans les cantons soit : le taux d'acceptation en pourcent (ordonnée), le taux de participation en pourcents (abscisse), le nombre de bulletins valables (rayon de la bulle), la région lingustique (couleur) et le libellé des votations (qui peut coulisser sous le graphique).
 
 **Contexte.** Cette application a été réalisé dans le cadre du cours de Master Visualisation de données de l'UNIL (Université de Lausanne) sous la direction d'Isaac Pante.
 
 **Technique.** L'application, développée en HTML-CSS-JavaScript, fait appel à la bibliothèque graphique D3.js.
 
 ## Mode d'emploi
+
+Au lancement du site [HISTO CH VOTATIONS](http://www.bofr.ch) le programme propose de choisir la période désirée (par défaut 1894-2017) et de lancer l'animation en cliquant sur le bouton qui suit. 
 
 
 ## Références et sources d'inspiration
