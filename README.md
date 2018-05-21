@@ -10,9 +10,12 @@
 
 **Technique.** L'application, développée en HTML-CSS-JavaScript, fait appel à la bibliothèque graphique D3.js.
 
+
 ## Mode d'emploi
 
-Au lancement du site [HISTO CH VOTATIONS](http://www.bofr.ch) le programme propose de choisir la période désirée (par défaut 1894-2017) et de lancer l'animation en cliquant sur le bouton qui suit. 
+Au lancement du site [HISTO CH VOTATIONS](http://www.bofr.ch) le programme propose de choisir la période désirée (par défaut 1894-2017) et de lancer l'animation en cliquant sur le bouton qui suit. Il est possible d'arrêter l'animation en déplaçant la souris sur les libellés de votations (sous l'axe des x). En passant la souris lentement sur les libellés de votations, de droite à gauche ou inversement, les résultats des votations vont défiler sur le graphique. Conseil : sélectionnez une plage de 20 ans au maximum pour être plus précis dans le défilement des libellés des votations. En passant lentement la souris sur les bulles, l'abréviation du canton concerné apparaît.
+
+Figure : le site avec ses principales caractéristiques
 
 
 ## Références et sources d'inspiration
