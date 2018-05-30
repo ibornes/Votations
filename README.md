@@ -31,13 +31,95 @@ Le script JavaScript comporte deux fonctions principales :
 Le coeur du développement se trouve dans la fonction draw qui présente les étapes suivantes :
 1. fixer les dimensions du graphique en fonction de la fenêtre et les échelles en fonction des données
 2. poser le container svg avec les axes, leur légende, la ligne des 50 % et les légendes des couleurs des bulles
-3. charger les données depuis un fichier json (essai7.json) et arranger les données par votations
-`var parvotation = d3.nest()
-                .key(function (d) {
-                    return d["Numéro"];
-                })
-                .entries(donnees);`
+3. charger les données depuis un fichier json (essai7.json) et les arranger par votations
+```javascript
+  //arrangement des données par votations [{key : no votation  et values : [{les données},..]}, ..]
+  var parvotation = d3.nest()
+                  .key(function (d) {
+                      return d["Numéro"];
+                  })
+                  .entries(donnees);
+```
 
+4. Mettre les bulles dans le graphique avec le canton comme titre
+5. Mettre un overlay pour le libellé de la votation
+6. Transition, interpolation sur le numéro des votations et liens entre libellé et graphique
+```javascript
+// Démarre une transition basée sur une interpolation du numéro des votations.
+            svg.transition()
+                .duration(30000)
+                .ease(d3.easeLinear)
+                .tween("nr_votation", tweenVotation)
+                .on("end", enableInteraction);
+
+            // Place les points selon les données.
+            function position(dot) {
+                dot.attr("cx", function (d) {
+                    return xScale(x(d));
+                })
+                    .attr("cy", function (d) {
+                        return yScale(y(d));
+                    })
+                    .attr("r", function (d) {
+                        return radiusScale(radius(d));
+                    });
+            }
+
+            // Pour que les petits points soient devant.
+            function order(a, b) {
+                return radius(b) - radius(a);
+            }
+
+            // Possibilité de passer avec la souris pour changer la votation.
+            function enableInteraction() {
+                var votScale = d3.scaleLinear()
+                    .domain([v_start, v_stop])
+                    .range([box.x + 10, box.x + box.width - 10])
+                    .clamp(true);
+
+                //Annule la transition si elle existe.
+                svg.transition().duration(0);
+
+                overlay
+                    .on("mouseover", mouseover)
+                    .on("mouseout", mouseout)
+                    .on("mousemove", mousemove)
+                    .on("touchmove", mousemove);
+
+                function mouseover() {
+                    label.classed("active", true);
+                }
+
+                function mouseout() {
+                    label.classed("active", false);
+                }
+
+                function mousemove() {
+                    displayVotation(votScale.invert(d3.mouse(this)[0]));
+                }
+            }
+
+            // Animation de l'interpolation des votations.
+            // Les points et légendes sont rechargées pour les données interpolées.
+            function tweenVotation() {
+                var nr_votation = d3.interpolateNumber(v_start, v_stop);
+                return function (t) {
+                    displayVotation(nr_votation(t));
+                };
+            }
+
+            // Modifie le display avec la votation selectionnée.
+            function displayVotation(nr_votation) {
+                var nr = Math.round(nr_votation);
+                dot.data(votationData(nr), key).call(position).sort(order);
+                label.text(votationData(nr)[0]["Libellé"]);
+            }
+
+            // Extraction des données de chaque votation.
+            function votationData(nr) {
+                return parvotation[nr].values;
+            }
+```
 
 
 ## Références et sources d'inspiration
