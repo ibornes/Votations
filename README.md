@@ -8,7 +8,7 @@
 
 **Contexte.** Cette application a été réalisé dans le cadre du cours de Master Visualisation de données de l'UNIL (Université de Lausanne) sous la direction d'Isaac Pante.
 
-**Technique.** L'application, développée en HTML-CSS-JavaScript, fait appel à la bibliothèque graphique D3.js.
+**Technique.** L'application, développée en HTML-CSS-JavaScript, fait appel à la bibliothèque graphique D3.js (version 5).
 
 
 ## Mode d'emploi
@@ -18,6 +18,18 @@ Au lancement du site [HISTO CH VOTATIONS](http://www.bofr.ch) le programme propo
 ![image_accueil](http://www.bofr.ch/modeemploi.jpg)
 
 Figure 1. Le site avec ses principales caractéristiques
+
+
+## Aspects informatiques
+
+Le programme, par choix, contient la partie HTML, CSS et JS. La partie statique du programme, soit le titre, le choix des années, le bouton de lancement et le mode d'emploi a été developpée en HTML. Pour le graphique dynamique, nous avons opté pour JavaScript renforcé par la bibliothèque graphique D3.js v5.
+
+Le script JavaScript comporte deux fonctions principales : 
+1. la fonction (function choice()) qui gère les choix d'années effectués par l'utilisateur et efface le dessin précédent.
+2. la fonction (function draw(v_start, v_stop)) qui gère le graphique et son animation
+
+Le coeur du développement se trouve dans la fonction draw qui présente les étapes suivantes :
+1. fixer les dimension du graphique en fonction de la fenêtre
 
 
 ## Références et sources d'inspiration
