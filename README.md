@@ -25,11 +25,19 @@ Figure 1. Le site avec ses principales caractéristiques
 Le programme, par choix, contient la partie HTML, CSS et JS. La partie statique du programme, soit le titre, le choix des années, le bouton de lancement et le mode d'emploi a été developpée en HTML. Pour le graphique dynamique, nous avons opté pour JavaScript renforcé par la bibliothèque graphique D3.js v5.
 
 Le script JavaScript comporte deux fonctions principales : 
-1. la fonction (function choice()) qui gère les choix d'années effectués par l'utilisateur et efface le dessin précédent.
-2. la fonction (function draw(v_start, v_stop)) qui gère le graphique et son animation
+1. la fonction (`function choice()`) qui gère les choix d'années effectués par l'utilisateur et efface le dessin précédent.
+2. la fonction (`function draw(v_start, v_stop)`) qui gère le graphique et son animation
 
 Le coeur du développement se trouve dans la fonction draw qui présente les étapes suivantes :
-1. fixer les dimension du graphique en fonction de la fenêtre
+1. fixer les dimensions du graphique en fonction de la fenêtre et les échelles en fonction des données
+2. poser le container svg avec les axes, leur légende, la ligne des 50 % et les légendes des couleurs des bulles
+3. charger les données depuis un fichier json (essai7.json) et arranger les données par votations
+`var parvotation = d3.nest()
+                .key(function (d) {
+                    return d["Numéro"];
+                })
+                .entries(donnees);`
+
 
 
 ## Références et sources d'inspiration
