@@ -4,9 +4,9 @@
 
 **Adresse.** Le graphique animé de l'historique du résultat des votations fédérales réalisées entre 1894 et 2017 se trouve à l'adresse suivante : [HISTO CH VOTATIONS](http://www.bofr.ch)
 
-**Description.** L'animation proposée permet de visualiser à l'aide de bulles le résultat par canton de chacune des votations fédérales exécutées entre 1894 et 2017. Le graphique à bulles proposé permet de représenter simultanément et dynamiquement cinq variables relatives au vote fédéral dans les cantons soit : le taux d'acceptation en pourcent (ordonnée), le taux de participation en pourcents (abscisse), le nombre de bulletins valables (rayon de la bulle), la région lingustique (couleur) et le libellé des votations (qui peut coulisser sous le graphique).
+**Description.** L'animation proposée permet de visualiser à l'aide de bulles le résultat par canton de chacune des votations fédérales exécutées entre 1894 et 2017. Le graphique à bulles proposé permet de représenter simultanément et dynamiquement cinq variables relatives au vote fédéral dans les cantons soit : le taux d'acceptation en pourcent (ordonnée), le taux de participation en pourcent (abscisse), le nombre de bulletins valables (rayon de la bulle), la région linguistique (couleur) et le libellé des votations (qui peut coulisser sous le graphique).
 
-**Contexte.** Cette application a été réalisé dans le cadre du cours de Master Visualisation de données de l'UNIL (Université de Lausanne) sous la direction d'Isaac Pante.
+**Contexte.** Cette application a été réalisée dans le cadre du cours de Master Visualisation de données de l'UNIL (Université de Lausanne) sous la direction d'Isaac Pante.
 
 **Technique.** L'application, développée en HTML-CSS-JavaScript, fait appel à la bibliothèque graphique D3.js (version 5).
 
@@ -22,7 +22,7 @@ Figure 1. Le site avec ses principales caractéristiques
 
 ## Aspects informatiques
 
-Le programme, par choix, contient la partie HTML, CSS et JS. La partie statique du programme, soit le titre, le choix des années, le bouton de lancement et le mode d'emploi a été developpée en HTML. Pour le graphique dynamique, nous avons opté pour JavaScript renforcé par la bibliothèque graphique D3.js v5.
+Le programme, par choix, contient la partie HTML, CSS et JS. La partie statique du programme (soit le titre, le choix des années, le bouton de lancement et le mode d'emploi) a été developpée en HTML. Pour la partie concernant le graphique dynamique, nous avons opté pour JavaScript renforcé par la bibliothèque graphique D3.js v5.
 
 Le script JavaScript comporte deux fonctions majeures : 
 1. la fonction (`function choice()`) qui gère les choix d'années effectués par l'utilisateur et efface le dessin précédent.
@@ -100,7 +100,7 @@ Le coeur du développement se trouve dans la fonction draw qui présente les ét
             }
 
             // Animation de l'interpolation des votations.
-            // Les points et légendes sont rechargées pour les données interpolées.
+            // Les points et légendes sont rechargés pour les données interpolées.
             function tweenVotation() {
                 var nr_votation = d3.interpolateNumber(v_start, v_stop);
                 return function (t) {
@@ -108,7 +108,7 @@ Le coeur du développement se trouve dans la fonction draw qui présente les ét
                 };
             }
 
-            // Modifie le display avec la votation selectionnée.
+            // Modifie le display avec la votation sélectionnée.
             function displayVotation(nr_votation) {
                 var nr = Math.round(nr_votation);
                 dot.data(votationData(nr), key).call(position).sort(order);
