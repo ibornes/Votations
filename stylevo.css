@@ -1,0 +1,52 @@
+.gen_title{
+    margin-left: 70px;
+    font: 500 45px "Helvetica";
+}
+
+.custom-select{
+    margin-left: 70px;
+    width: auto;
+    font: 500 20px "Helvetica";
+}
+
+#SelectVot {
+    width: 365px;
+}
+
+.comment, .lien {
+    margin-left: 50px;
+}
+
+text {
+    font: 18px sans-serif;
+}
+
+.dot {
+    stroke: #000;
+    opacity: 0.8;
+}
+
+.axis path, .axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+}
+
+.label {
+    fill: #4f4f4f;
+}
+
+.nr_votation.label {
+    font: 500 28px "Helvetica";
+    fill: #6e6e6e;
+}
+
+.nr_votation.label.active {
+    fill: #ab4f54;
+}
+
+.overlay {
+    fill: none;
+    pointer-events: all;
+    cursor: ew-resize;
+}
