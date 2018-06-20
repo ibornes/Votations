@@ -22,6 +22,7 @@ d3.json("essai7.json").then(function (donn) {
     //Crée et insère la liste de sélection
     var selectList = document.createElement("select");
     selectList.setAttribute("id", "SelectVot");
+    selectList.setAttribute("onchange", "choiceVot()");
     myDiv.appendChild(selectList);
 
     //Crée et insère les options de sélection
